@@ -1,0 +1,9 @@
+<Project>
+  <!-- Shared settings for every project in the repo (similar to a Maven parent POM). -->
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,11 @@
+bin/
+obj/
+TestResults/
+*.user
+.vs/
+.idea/
+*.db
+*.db-shm
+*.db-wal
+node_modules/
+web/dist/

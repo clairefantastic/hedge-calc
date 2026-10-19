@@ -1,0 +1,26 @@
+@host = http://localhost:5080
+
+### Happy path: EUR long, JPY long, GBP short
+POST {{host}}/hedges/calculate
+Content-Type: application/json
+
+{
+  "baseCurrency": "USD",
+  "exposures": [
+    { "currency": "EUR", "exposure": 1000000.00, "hedgeRatio": 0.75 },
+    { "currency": "JPY", "exposure": 123457, "hedgeRatio": 0.5 },
+    { "currency": "GBP", "exposure": -250000.00, "hedgeRatio": 1 }
+  ]
+}
+
+### Validation error: ratio above 1 and duplicate currency
+POST {{host}}/hedges/calculate
+Content-Type: application/json
+
+{
+  "baseCurrency": "USD",
+  "exposures": [
+    { "currency": "EUR", "exposure": 100, "hedgeRatio": 1.5 },
+    { "currency": "eur", "exposure": 100, "hedgeRatio": 0.5 }
+  ]
+}
